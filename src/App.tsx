@@ -1,16 +1,16 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from './firebase/config';
 import './App.css'
 
 
 const handleGoogleLogin = async () => {
-  try {
-    const result = await signInWithPopup(auth, provider);
-    console.log(result.user); // pour tester
-  } catch (error) {
-    console.error(error);
-  }
+    try {
+        const result = await signInWithPopup(auth, provider);
+        console.log(result.user); // pour tester
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 
@@ -18,27 +18,27 @@ const handleGoogleLogin = async () => {
 
 function App() {
 
-  
-  return (
-    
-    <>
-      <section id="center">
 
-        <h1 className="title">QuickMath</h1>
+    return (
 
-        <button type="button" className="register-button" onClick={handleGoogleLogin}> register </button>
+        <>
+            <section id="center">
 
-      </section>
+                <h1 className="title">QuickMath</h1>
 
-      <div className="ticks"></div>
+                <button type="button" className="register-button" onClick={handleGoogleLogin}> register </button>
+
+            </section>
+
+            <div className="ticks"></div>
 
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-  
-  
+            <div className="ticks"></div>
+            <section id="spacer"></section>
+        </>
+    )
+
+
 }
 
 export default App
